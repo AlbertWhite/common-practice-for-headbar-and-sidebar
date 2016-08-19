@@ -1,0 +1,23 @@
+{
+  "name": "webdesign",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlbertWhite/web-design-trend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlbertWhite/web-design-trend/issues"
+  },
+  "homepage": "https://github.com/AlbertWhite/web-design-trend#readme",
+  "dependencies": {
+    "browser-sync": "^2.14.0",
+    "gulp": "^3.9.1"
+  }
+}
