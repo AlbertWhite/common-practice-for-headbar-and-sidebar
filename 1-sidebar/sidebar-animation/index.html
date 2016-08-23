@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="bootstrap.min.js"></script>
+	<style>
+		.menu-sidebar{
+			position: absolute;
+			top:0;
+			left:0;
+			width:20%;
+			height:100%;
+			font-size:18px;
+			font-weight:300;
+			color:#777777;
+			line-height: 2;
+			cursor:pointer;
+		}
+
+		.effect{
+			margin-top:60px;
+		}
+
+		.effect1{
+			margin-left:20px;
+		}
+
+		.effect2{
+		}
+
+		.effect1>a{
+			display: block;
+			color:#777777;
+			text-decoration: none;
+			width:10%;
+			transition:width 1s;
+		}
+		.effect1>a:hover{
+			border-bottom: 1px solid #777777;
+			width:60%;
+		}
+
+		.effect2>a{
+			display: block;
+			color:#777777;
+			text-decoration: none;
+			width:10%;
+			transition:width 0.5s;
+			padding-left:20px;
+		}
+		.effect2>a:hover{
+			background:rgba(119,119,119,0.1);
+			width:100%;
+		}
+
+		.effect3 a{
+			display: block;
+			color:#777777;
+			text-decoration: none;
+			padding-left: 20px;
+			transition:all 0.5s;
+		}
+		.effect3 a:hover{
+			transform: translateX(3px);
+		}
+		.effect3 li{
+			list-style: none;
+		}
+		.effect3 li::before{
+		    content: "";
+		    display: block;
+		    background: #777777;
+		    width: 10px;
+		    height: 10px;
+		    position: relative;
+		    top:22px;
+		    left:4px;
+		    transition:all 0.5s;
+		}
+		.effect3 li:hover::before{
+			transform:rotate(360deg);
+		}
+
+		.effect4 a{
+			display: block;
+			color:#777777;
+			text-decoration: none;
+			padding-left: 20px;
+			transition:all 0.5s;
+		}
+		.effect4 a:hover{
+			transform: translateX(3px);
+		}
+		.effect4 li{
+			list-style: none;
+		}
+		.effect4 li::before{
+		    content: "";
+		    display: block;
+		    background: #777777;
+		    width: 10px;
+		    height: 10px;
+		    position: relative;
+		    top:21px;
+		    left:4px;
+		    border-radius: 10px;
+		    transform:scale(0);
+		    transition:all 0.5s;
+		}
+		.effect4 li:hover::before{
+			transform:scale(1);
+		}
+
+		.content{
+			position: absolute;
+			left:20%;
+			top:0;
+			width:80%;
+			height:100%;
+			background-color: #777777;
+		}
+		h5{
+			margin:20px;
+			padding:5px;
+			color:white;
+			font-size:20px;
+			background-color: #777777;
+		}
+	</style>
+</head>
+<body>
+	<nav class="menu-sidebar">
+		<div class="effect effect1">
+			<a>HOME</a>
+			<a>ABOUT</a>
+		</div>
+
+		<div class="effect effect2">
+			<a>HOME</a>
+			<a>ABOUT</a>
+		</div>
+
+		<div class="effect effect3">
+			<li>
+				<a>HOME</a>
+			</li>
+			<li>
+				<a>ABOUT</a>
+			</li>
+		</div>
+
+		<div class="effect effect4">
+			<li>
+				<a>HOME</a>
+			</li>
+			<li>
+				<a>ABOUT</a>
+			</li>
+		</div>
+
+	</nav>
+	<div class="content">
+	</div>
+	<script>
+		
+	</script>
+</body>
+</html>

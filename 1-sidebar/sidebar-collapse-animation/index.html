@@ -28,6 +28,23 @@
 			display:none;
 			transition-delay: 1s;
 		}
+		#menu-4:hover > ul{
+			visibility: visible;
+  			opacity: 1;
+		}
+		.menu4{
+			visibility: hidden;
+  			opacity: 0;
+  			transition: visibility 0s, opacity 0.5s linear;
+		}
+		#ul-4>li>a{
+			display: block;
+			width:10%;
+			transition: width 0.5s linear;
+		}
+		#ul-4>li>a:hover{
+			width:100%;
+		}
 
 	</style>
 </head>
@@ -58,6 +75,17 @@
 							</li>
 							<li>
 								<a href="#menu3-2">Menu 3.2</a>
+							</li>
+						</ul>
+					</li>
+					<li class="li-4">
+						<a id="menu-4" href="#menu4">Menu 4 (Collapse with onhover)</a>
+						<ul class="nav nav-stacked collapse collapse-4" id="ul-4">
+							<li>
+								<a href="#menu4-1">Menu4.1</a>
+							</li>
+							<li>
+								<a href="#menu4-2">Menu4.2</a>
 							</li>
 						</ul>
 					</li>
@@ -140,6 +168,17 @@
 				flag = 0;
 			}
 		});
+
+		$(".li-4").hover(
+			function(){
+				$(".collapse-4").collapse("show");
+			},
+			function(){
+				$(".collapse-4").collapse("hide");
+			}
+		);
+
+		
 	</script>
 </body>
 </html>

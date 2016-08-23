@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="bootstrap.min.js"></script>
+	<style>
+		html{
+			height:100%;
+			width:100%;
+		}
+		body{
+			position: relative;
+			height:100%;
+			width: 100%;
+			transition: transform 500ms ease;
+		}
+		.first-col{
+			background-color: rgba(76,76,76,0.93);
+			padding:8px;
+			height:100%;
+			width:5%;
+			z-index: 10;
+		}
+		.open-sidebar{
+			fill:#ffffff;
+			transition:transform 1s ease;
+		}
+		.open-sidebar:hover{
+			transform: rotate3d(0, 1, 0, 360deg);
+
+		}
+		.second-col{
+			width:8%;
+			height:100%;
+			position: absolute;
+			top:0px;
+			left:-8%;
+			transition:all 0.5s ease;
+			padding:50px 0px;
+			line-height: 1.7;
+			background-color: rgba(60,60,60,0.93);
+			border-right:1px solid rgba(255,255,255,0.2);
+			z-index:5;
+		}
+		.third-col{
+			width:12%;
+			height:100%;
+			position: absolute;
+			top:0px;
+			left:2%;
+			display: none;
+			transition:all 0.5s ease;
+			padding:50px 0px;
+			line-height: 1.7;
+			background-color: rgba(60,60,60,0.93);
+		}
+		.show-second{
+			left:5%;
+
+		}
+		.show-third{
+			display: block;
+			left:13%;
+		}
+		.second-col ul{
+			padding: 0px;
+		}
+		.second-col li{
+			width:95%;
+			display: block;
+			margin:0 auto;
+		}
+		.second-col a{
+			color: white;
+		    text-decoration: none;
+		    font-size: 15px;
+		    display: block;
+		    text-transform: uppercase;
+		    text-align: center;
+		    padding: 18px;
+		    border-top: 0.5px solid rgba(255,255,255,0.2);	
+		    border-bottom: 0.5px solid rgba(255,255,255,0.2);		
+		}
+		.third-col ul{
+			padding: 0px;
+		}
+		.third-col li{
+			width:100%;
+			display: block;
+			margin:0 auto;
+		}
+		.third-col a{
+			color: white;
+		    text-decoration: none;
+		    font-size: 15px;
+		    display: block;
+		    text-transform: uppercase;
+		    text-align: center;
+		    padding: 18px;
+		    border-top: 0.5px solid rgba(255,255,255,0.2);	
+		    border-bottom: 0.5px solid rgba(255,255,255,0.2);		
+		}
+	</style>
+</head>
+<body>
+	<div class="first-col">
+		<svg class="open-sidebar" width="50" height="60">
+			<rect x="7" y="10" fill="#ffffff" width="36" height="6"></rect>
+			<rect x="7" y="20" fill="#ffffff" width="36" height="6"></rect>
+			<rect x="7" y="30" fill="#ffffff" width="36" height="6"></rect>
+			 <text x="7" y="55" fill="#ffffff" font-weight="bold" font-size="12">MENU</text>
+		</svg>
+	</div>
+	<div class="second-col">
+		<ul>
+			<li>
+				<a class="main-a">Main</a>
+			</li>
+			<li>
+				<a>About</a>
+			</li>
+		</ul>
+	</div>
+	<div class="third-col">
+		<ul>
+			<li>
+				<a>Sub Menu 1</a>
+			</li>
+			<li>
+				<a>Sub Menu 2</a>
+			</li>
+		</ul>
+	</div>	
+	<script>
+		$(".open-sidebar").hover(function(){
+			$(".second-col").addClass("show-second");
+		}); 
+
+		$(".second-col").mouseleave(
+			function(){
+				 if($(".third-col").hasClass("show-third")){
+				 	console.log("third");
+				 }else{
+				 	$(".second-col").removeClass("show-second");
+				 }
+			}
+		);
+
+		$(".main-a").hover(function(){
+			$(".third-col").addClass("show-third");
+		});
+
+		$(".third-col").mouseleave(function(){
+			$(".third-col").removeClass("show-third");
+			$(".second-col").removeClass("show-second");
+		});
+
+
+	</script>
+</body>
+</html>
