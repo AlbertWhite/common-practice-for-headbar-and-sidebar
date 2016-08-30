@@ -4,6 +4,7 @@
 	<title>Web design trend</title>
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
 	<script type="text/javascript" src="app/app.js"></script>
 </head>
 <style type="text/css">
@@ -101,9 +102,55 @@
 		font-size:12px;
 	}
 
-	.fa{
+	.name-i{
 		margin-left: 80px;
+	}
 
+	.panel-div{
+		width: 100%;
+		padding: 50px;
+	}
+
+	.panel{
+		width:300px;
+		height:290px;
+		border:2px solid #8ab236;
+		position: relative;
+	}
+
+	.panel > .link{
+		margin:0 auto;
+		display: block;
+		padding: 10px;
+	}
+
+	.panel > .link >.link-div{
+		background-color: #D7D5CE;
+		height:26px;
+		width: 137px;
+		display: inline-block;
+		text-align: center;
+		padding-top:4px;
+		color:#2b2d29;
+		cursor: pointer;
+	}
+
+	.panel > .link >.link-div:hover{
+		background-color: #E1E6B7;
+	}
+
+	.panel > .title-div{
+		position: absolute;
+    	top: -28px;
+    	left: 80px;
+    	font-weight: 200;
+    	letter-spacing: 0.5px;
+	}
+
+	img{
+		 width: 280px;
+    	 display: block;
+    	 margin: 10px auto;
 	}
 
 </style>
@@ -121,13 +168,39 @@
 		<span class="content-span"></span>
 		<div class="bottom"></div>
 	</div>
+	<div class="panel-div">
+		<div class="panel">
+			<div class="title-div">Hidden Sidebar</div>
+			<img src="./1-sidebar/sidebar-hidden/hidden.png"/>
+			<div class="link">
+				<div class="link-div">
+					<i class="fa fa-link" aria-hidden="true"></i>
+				</div>
+				<div class="link-div">
+					<i class="fa fa-code" aria-hidden="true"></i>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="bottom-bar">
 		<a class="name-a" href="#">Albert Xu (www.yuebaixu.com)</a>
-		<i class="fa fa-envelope" aria-hidden="true"></i>
+		<i class="fa fa-envelope name-i" aria-hidden="true"></i>
 		<a class="name-a" href="#">albert.yuebai@gmail.com</a>
-		<i class="fa fa-github" aria-hidden="true"></i>
+		<i class="fa fa-github name-i" aria-hidden="true"></i>
 		<a class="name-a" href="#">https://github.com/AlbertWhite</a>
 	</div>
-
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("img").hover(function(){
+				var src = $(this).attr("src");
+				var new_src = src.substr(0,src.lastIndexOf("."))+".gif";
+				$(this).attr("src", new_src);
+			},function(){
+				var src = $(this).attr("src");
+				var new_src = src.substr(0,src.lastIndexOf("."))+".png";
+				$(this).attr("src", new_src);
+			});
+		});
+	</script>
 </body>
 </html>
