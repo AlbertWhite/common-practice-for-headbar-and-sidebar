@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	<style>
+		html{
+			height:100%;
+			width:100%;
+		}
+
+		.header{
+			width: 100%;
+			height:80px;
+			background-color: #FCD68A;
+			padding: 20px;
+		}
+
+		.header > ul >li{
+			position: relative;
+			display: inline-block;
+			cursor: pointer;
+		}
+
+		.header>ul>li>a{
+			position: relative;
+			color:#2d2d2d;
+			text-transform: uppercase;
+			font-size: 15px;
+			font-weight: 500;
+			font-family: Lato;
+			transition: all 0.2s;
+		}
+
+		.header>ul>li>a:hover{
+			background-color: transparent;
+			color:red;
+			font-weight: 500;
+		}
+
+		.submenu{
+			position: absolute;
+			background-color: #2d2d2d;
+			padding:14px;
+			display: none;
+			color: #FCD68A;
+			width: auto;
+			opacity: 0.9;
+			transition: all 1s;
+		}
+
+		.header>ul>li:hover>.submenu{
+			display: block;
+			background-color: rgba(45,45,45,0.9);
+		}	
+
+		.submenu:before{
+			position: absolute;
+			top:-5px;
+			left:30px;
+			width: 0; 
+		    height: 0; 
+		    border-left: 5px solid transparent;
+		    border-right: 5px solid transparent;
+		    border-bottom: 5px solid black;
+		}
+
+		.submenu > li{
+			padding:5px;
+		}
+
+		.full-screen-header{
+			width: 100%;
+			height:80px;
+			background-color: #FCD68A;
+			margin-top: 20%;
+		}
+
+		.full-screen-header>ul>li>a{
+			color:#2d2d2d;
+			text-transform: uppercase;
+			font-size: 15px;
+			font-weight: 500;
+			font-family: Lato;
+			margin-left: 20px;
+			margin-top:20px;
+		}
+
+		.full-screen-header>ul>li>a:hover{
+			background-color: transparent;
+			color:red;
+			font-weight: 500;
+		}
+
+		.submenu-fullscreen{
+			position: absolute;
+			top:60px;
+			width:100%;
+			height:0px;
+			background-color: #2d2d2d;
+			color:white;
+			padding:14px;
+			opacity: 0.9;
+			visibility: hidden;
+			transition: height 0.8s ease;
+		}
+
+		.full-screen-header>ul>li:hover>.submenu-fullscreen{
+			visibility: visible;
+			height: 120px;
+		}	
+
+		.full-screen-header>ul>li>ul{
+			padding-left: 50px;
+		}
+	</style>
+</head>
+<body>	
+	<header class="header">
+		<ul class="nav">
+			<li>
+				<a>About</a>
+				<ul class="nav submenu">
+					<li>About</li>
+					<li>About</li>
+				</ul>
+			</li>
+			<li>
+				<a>Main</a>
+				<ul class="nav submenu">
+					<li>Main</li>
+					<li>Main</li>
+				</ul>
+			</li>
+		</ul>
+	</header>
+
+	<div class="full-screen-header">
+		<ul class="nav">
+			<li>
+				<a>About</a>
+				<ul class="nav submenu-fullscreen">
+					<li>About</li>
+					<li>About</li>
+				</ul>
+		</ul>
+	</div>
+	<script type="text/javascript">
+
+	</script>
+</body>
+</html>
+

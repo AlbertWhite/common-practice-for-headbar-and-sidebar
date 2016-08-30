@@ -5,9 +5,9 @@ var browserSync = require('browser-sync').create();
 gulp.task('server', function() {
     browserSync.init({
         server: {
-            baseDir: "./2-header/header-sticky/"
+            baseDir: "./2-header/header-dropdown/"
         }
     });
 
-    gulp.watch("./2-header/header-sticky/*.html").on('change', browserSync.reload);	
+    gulp.watch("./2-header/header-dropdown/*.html").on('change', browserSync.reload);	
 });

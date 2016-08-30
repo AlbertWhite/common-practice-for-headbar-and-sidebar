@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	
+
+	<style>
+		html{
+			height:100%;
+			width:100%;
+		}
+		.parallex{
+			background-image: url("bg.jpg");
+			min-height: 400px;
+			font-size:20px;
+			padding: 10px;
+		    background-attachment: fixed;/*background-attachment: fixed*/
+		    color:white;
+		}
+		.bg1{
+			background-image: url("bg1.jpg");
+		}
+		.bg2{
+			background-image: url("bg2.jpg");
+		}
+		.content{
+			background-color:#fdfdfd;
+			height:500px;
+		}
+		.arrow-div{
+			color: white;
+		    display: block;
+		    width: 100%;
+		    text-align: center;
+		    position: absolute;
+		    top: 360px;
+		    font-size: 30px;
+		    cursor: pointer;
+		}
+		.arrow-div:hover{
+			opacity: 0.8;
+		}
+		.menu{
+			opacity: 0;
+			width: 100%;
+			height: 5%;
+			background-color: black;
+			position: fixed;
+			top:0;
+			color:white;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="parallex">
+		Please try to scroll
+		<div class="arrow-div">
+			<span class="glyphicon glyphicon-chevron-down"></span>
+		</div>
+	</div>
+	<div class="menu">
+		MENU
+	</div>
+	<div class="content">
+	</div>
+	<div class="parallex bg1">
+	</div>
+	<div class="content">
+	</div>
+	<div class="parallex bg2">
+	</div>
+	<script type="text/javascript">
+		$(".arrow-div").click(function(){
+			$("html, body").animate({ scrollTop: "400px" });//jquery animate function - scrollTop
+		});
+
+		$(window).scroll(function () {
+		    var sc = $(window).scrollTop();
+		    if(sc >= 399){
+		    	$(".menu").css("opacity","1");
+		    }else{
+		    	$(".menu").css("opacity","0");
+		    }
+		    console.log(sc);
+		});		
+
+	</script>
+</body>
+</html>
+
