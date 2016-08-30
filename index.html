@@ -1,1 +1,133 @@
-hello world!
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Web design trend</title>
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script type="text/javascript" src="app/app.js"></script>
+</head>
+<style type="text/css">
+	html, body{
+		width:100%;
+		height: 100%;
+		margin:0px;
+		font-family: Helvetica Neue;
+	}
+
+	.header-bar{
+		position: absolute;
+		top:0px;
+		width:100%;
+		height:5px;
+		background-color: black;
+	}
+
+	.bottom-bar{
+		position: absolute;
+		bottom: 0px;
+		width:100%;
+		height:30px;
+		background-color: #2B2D29;
+		color: #8ab236;
+		padding: 5px;
+		text-align: center;
+	}
+
+	header>ul{
+		margin-left:40%;
+	}
+
+	header > ul >li{
+		position: relative;
+		text-transform: uppercase;
+		list-style: none;
+		display: inline-block;
+		margin-left: 50px;
+		font-weight: 200;
+	}
+
+	header > ul >li:hover::after {
+	    content: "";
+	    width: 0;
+	    height: 0;
+	    position: absolute;
+	    bottom: -16px;
+	    left: 40%;
+	    border-style: solid;
+	    border-width: 8px 8px 9px 8px;/*by controlling border-width and border-color, we can specify the triangle*/
+	    border-color: transparent transparent #8ab236 transparent;
+	}
+
+	header > ul >li >a{
+		text-decoration: none;
+		cursor: pointer;
+		transition: all 0.5s;
+		width:40px;
+		height: 20px;
+		letter-spacing: 1px;
+		font-size:13px;
+	}
+
+	header > ul >li >a:hover{
+		color: #8AB236;
+
+	}
+
+	.content{
+		position: relative;
+		width:100%;
+		background-color: #F3ECD9;
+		height:80px;
+		text-align: center;
+	}
+
+	.content > .bottom{
+		background-color: #8AB236;
+		width:100%;
+		height:5px;
+		position: absolute;
+		bottom: 0px;
+	}
+
+	.content > .content-span{
+		color: #8ab236;
+
+	}
+
+	.name-a{
+		color:#8ab236;
+		display: inline-block;
+		text-decoration: none;
+		font-size:12px;
+	}
+
+	.fa{
+		margin-left: 80px;
+
+	}
+
+</style>
+<body ng-app="myApp" ng-controller="panelCtrl">
+	<div class="header-bar"></div>
+	<header>
+		<ul>
+			<li><a href="#">headbar</a></li>
+			<li><a href="#">sidebar</a></li>
+			<li><a href="#">hover</a></li>
+			<li><a href="#">scroll</a></li>
+		</ul>
+	</header>
+	<div class="content">
+		<span class="content-span"></span>
+		<div class="bottom"></div>
+	</div>
+	<div class="bottom-bar">
+		<a class="name-a" href="#">Albert Xu (www.yuebaixu.com)</a>
+		<i class="fa fa-envelope" aria-hidden="true"></i>
+		<a class="name-a" href="#">albert.yuebai@gmail.com</a>
+		<i class="fa fa-github" aria-hidden="true"></i>
+		<a class="name-a" href="#">https://github.com/AlbertWhite</a>
+	</div>
+
+</body>
+</html>
