@@ -5,9 +5,9 @@ var browserSync = require('browser-sync').create();
 gulp.task('server', function() {
     browserSync.init({
         server: {
-            baseDir: "./1-sidebar/sidebar-collapse"
+            baseDir: "./1-sidebar/sidebar-bootstrap-pill"
         }
     });
 
-    gulp.watch("./1-sidebar/sidebar-collapse/*.html").on('change', browserSync.reload);	
+    gulp.watch("./1-sidebar/sidebar-bootstrap-pill/*.html").on('change', browserSync.reload);	
 });
