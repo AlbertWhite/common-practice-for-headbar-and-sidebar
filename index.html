@@ -5,6 +5,14 @@
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="app/app.js"></script>
 </head>
 <style type="text/css">
@@ -34,8 +42,13 @@
 		text-align: center;
 	}
 
+	.bottom-bar > a:hover{
+		color:#8ab236;
+	}
+
 	header>ul{
 		margin-left:40%;
+		margin-top: 12px;
 	}
 
 	header > ul >li{
@@ -71,7 +84,32 @@
 
 	header > ul >li >a:hover{
 		color: #8AB236;
+		text-decoration: none;
+		font-weight: 400;
+	}
 
+	header > ul >li >a:focus{
+		color: #8AB236;
+		text-decoration: none;
+		font-weight: 400;
+	}
+
+	.menu-active{
+		color: #8AB236;
+		text-decoration: none;
+		font-weight: 400;
+	}
+
+	.menu-active::after {
+	    content: "";
+	    width: 0;
+	    height: 0;
+	    position: absolute;
+	    bottom: -16px;
+	    left: 40%;
+	    border-style: solid;
+	    border-width: 8px 8px 9px 8px;/*by controlling border-width and border-color, we can specify the triangle*/
+	    border-color: transparent transparent #8ab236 transparent;
 	}
 
 	.content{
@@ -87,7 +125,7 @@
 		width:100%;
 		height:5px;
 		position: absolute;
-		bottom: 0px;
+		top: 0px;
 	}
 
 	.content > .content-span{
@@ -112,8 +150,10 @@
 	}
 
 	.panel{
-		width:300px;
-		height:290px;
+		margin: 10px auto;
+    	display: block;
+		width:320px;
+		height:260px;
 		border:2px solid #8ab236;
 		position: relative;
 	}
@@ -121,7 +161,6 @@
 	.panel > .link{
 		margin:0 auto;
 		display: block;
-		padding: 10px;
 	}
 
 	.panel > .link >.link-div{
@@ -139,16 +178,29 @@
 		background-color: #E1E6B7;
 	}
 
-	.panel > .title-div{
-		position: absolute;
-    	top: -28px;
-    	left: 80px;
+	.panel > .link >.link-div > a > i{
+		transition: all 0.5s ease;
+		color:#2b2d29;
+	}
+
+	.panel > .link >.link-div:hover > a> i{
+		transform:scale(1.1,1.1);
+		color:#2b2d29;
+	}
+
+	.col-sm-4{
+		text-align: center;
+	}
+
+	.title-div{
+		margin: 20px auto;
+		display: block;
     	font-weight: 200;
     	letter-spacing: 0.5px;
 	}
 
 	img{
-		 width: 280px;
+		 height: 192px;
     	 display: block;
     	 margin: 10px auto;
 	}
@@ -158,29 +210,37 @@
 	<div class="header-bar"></div>
 	<header>
 		<ul>
-			<li><a href="#">headbar</a></li>
-			<li><a href="#">sidebar</a></li>
-			<li><a href="#">hover</a></li>
-			<li><a href="#">scroll</a></li>
+			<li><a href="#" class="menu-a">headbar</a></li>
+			<li><a href="#" class="menu-a menu-active">sidebar</a></li>
+			<li><a href="#" class="menu-a">hover</a></li>
+			<li><a href="#" class="menu-a">scroll</a></li>
 		</ul>
 	</header>
 	<div class="content">
 		<span class="content-span"></span>
 		<div class="bottom"></div>
 	</div>
-	<div class="panel-div">
-		<div class="panel">
-			<div class="title-div">Hidden Sidebar</div>
-			<img src="./1-sidebar/sidebar-hidden/hidden.png"/>
-			<div class="link">
-				<div class="link-div">
-					<i class="fa fa-link" aria-hidden="true"></i>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-4" ng-repeat="panel in panels">
+				<div class="title-div">{{panel.name}}</div>
+				<div class="panel">
+					<img src="{{panel.img}}"/>
+					<div class="link">
+						<div class="link-div">
+							<a href="{{panel.link}}" target="_blank">
+								<i class="fa fa-link" aria-hidden="true"></i>
+							</a>
+						</div>
+						<div class="link-div">
+							<a href="{{panel.code}}" target="_blank">
+								<i class="fa fa-code" aria-hidden="true"></i>
+							</a>
+						</div>
+					</div>
 				</div>
-				<div class="link-div">
-					<i class="fa fa-code" aria-hidden="true"></i>
-				</div>
-			</div>
-		</div>
+			</div>	
+		</div>	
 	</div>
 	<div class="bottom-bar">
 		<a class="name-a" href="#">Albert Xu (www.yuebaixu.com)</a>
@@ -200,6 +260,12 @@
 				var new_src = src.substr(0,src.lastIndexOf("."))+".png";
 				$(this).attr("src", new_src);
 			});
+
+			$(".menu-a").click(function(){
+				$(".menu-a").removeClass("menu-active");
+				$(this).addClass("menu-active");	
+			});
+
 		});
 	</script>
 </body>
