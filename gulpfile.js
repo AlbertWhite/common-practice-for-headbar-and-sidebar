@@ -5,9 +5,9 @@ var browserSync = require('browser-sync').create();
 gulp.task('server', function() {
     browserSync.init({
         server: {
-            baseDir: "./"
+            baseDir: "./1-sidebar/sidebar-animation"
         }
     });
 
-    gulp.watch("./*.html").on('change', browserSync.reload);	
+    gulp.watch("./1-sidebar/sidebar-animation/*.html").on('change', browserSync.reload);	
 });
