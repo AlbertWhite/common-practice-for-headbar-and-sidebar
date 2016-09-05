@@ -209,15 +209,28 @@
 		padding: 40px;
 	}
 
+	.fb-share-button{
+		position: absolute !important;
+    	right: 10px;
+    	top: 10px;
+	}
+
 </style>
 <body ng-app="myApp" ng-controller="panelCtrl">
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+	<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
 	<header>
 		<img class="logo-img" src="logo.svg" class="svg"/>
 		<ul>
-			<li><a href="#" class="menu-a">headbar</a></li>
-			<li><a href="#" class="menu-a menu-active">sidebar</a></li>
-			<li><a href="#" class="menu-a">hover</a></li>
-			<li><a href="#" class="menu-a">scroll</a></li>
+			<li><a href="#" class="menu-a" ng-click="update('headbar')">headbar</a></li>
+			<li><a href="#" class="menu-a menu-active"  ng-click="update('sidebar')">sidebar</a></li>
 		</ul>
 	</header>
 	<div class="content">
@@ -227,7 +240,7 @@
 		<div class="row">
 			<div class="col-sm-4" ng-repeat="panel in panels">
 				<div class="panel">
-					<img class="img" src="{{panel.img}}"/>
+					<img class="img" src="{{panel.img}}" ng-mouseover="hover()" ng-mouseleave ="leave()"/>
 					<div class="link">
 						<div class="link-div">
 							<a href="{{panel.link}}" target="_blank">
@@ -261,15 +274,19 @@
 	</div>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$(".img").hover(function(){
-				var src = $(this).attr("src");
-				var new_src = src.substr(0,src.lastIndexOf("."))+".gif";
-				$(this).attr("src", new_src);
-			},function(){
-				var src = $(this).attr("src");
-				var new_src = src.substr(0,src.lastIndexOf("."))+".png";
-				$(this).attr("src", new_src);
-			});
+			// $(".img").hover(function(){
+			// 	console.log("come");
+			// 	var src = $(this).attr("src");
+			// 	var new_src = src.substr(0,src.lastIndexOf("."))+".gif";
+			// 	console.log(new_src);
+			// 	$(this).attr("src", new_src);
+			// },function(){
+			// 	console.log("go");
+			// 	var src = $(this).attr("src");
+			// 	var new_src = src.substr(0,src.lastIndexOf("."))+".png";
+			// 	console.log(new_src);
+			// 	$(this).attr("src", new_src);
+			// });
 
 			$(".menu-a").click(function(){
 				$(".menu-a").removeClass("menu-active");
