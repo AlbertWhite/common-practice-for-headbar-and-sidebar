@@ -22,17 +22,7 @@
 		margin:0px;
 		font-family: Helvetica Neue;
 	}
-
-	.header-bar{
-		position: absolute;
-		top:0px;
-		width:100%;
-		height:5px;
-		background-color: black;
-	}
-
 	.bottom-bar{
-		position: absolute;
 		bottom: 0px;
 		width:100%;
 		height:30px;
@@ -46,9 +36,13 @@
 		color:#8ab236;
 	}
 
+	header{
+		text-align:center;
+	}
+
 	header>ul{
-		margin-left:40%;
-		margin-top: 12px;
+		padding-left: 0px;
+    	margin-top: 20px;
 	}
 
 	header > ul >li{
@@ -115,22 +109,16 @@
 	.content{
 		position: relative;
 		width:100%;
-		background-color: #F3ECD9;
-		height:80px;
+		height:10px;
 		text-align: center;
 	}
 
 	.content > .bottom{
 		background-color: #8AB236;
 		width:100%;
-		height:5px;
+		height:10px;
 		position: absolute;
 		top: 0px;
-	}
-
-	.content > .content-span{
-		color: #8ab236;
-
 	}
 
 	.name-a{
@@ -154,8 +142,10 @@
     	display: block;
 		width:320px;
 		height:260px;
-		border:2px solid #8ab236;
 		position: relative;
+		-webkit-box-shadow: 2px 2px 2px 1px rgba(199,199,199,1);
+		-moz-box-shadow: 2px 2px 2px 1px rgba(199,199,199,1);
+		box-shadow: 2px 2px 2px 1px rgba(199,199,199,1);
 	}
 
 	.panel > .link{
@@ -188,27 +178,41 @@
 		color:#2b2d29;
 	}
 
+	.container-fluid{
+		background-color: #fbfbfb;
+	}
+
 	.col-sm-4{
 		text-align: center;
+		margin-top: 25px;
 	}
 
 	.title-div{
-		margin: 20px auto;
+		margin: 5px auto 10px auto;
 		display: block;
-    	font-weight: 200;
-    	letter-spacing: 0.5px;
 	}
 
-	img{
+	.img{
 		 height: 192px;
     	 display: block;
     	 margin: 10px auto;
 	}
 
+	.logo-img{
+		margin:0 auto;
+		display: block;
+		height:160px;
+	}
+
+	.more-div{
+		text-align: center;
+		padding: 40px;
+	}
+
 </style>
 <body ng-app="myApp" ng-controller="panelCtrl">
-	<div class="header-bar"></div>
 	<header>
+		<img class="logo-img" src="logo.svg" class="svg"/>
 		<ul>
 			<li><a href="#" class="menu-a">headbar</a></li>
 			<li><a href="#" class="menu-a menu-active">sidebar</a></li>
@@ -217,15 +221,13 @@
 		</ul>
 	</header>
 	<div class="content">
-		<span class="content-span"></span>
 		<div class="bottom"></div>
 	</div>
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-sm-4" ng-repeat="panel in panels">
-				<div class="title-div">{{panel.name}}</div>
 				<div class="panel">
-					<img src="{{panel.img}}"/>
+					<img class="img" src="{{panel.img}}"/>
 					<div class="link">
 						<div class="link-div">
 							<a href="{{panel.link}}" target="_blank">
@@ -239,7 +241,15 @@
 						</div>
 					</div>
 				</div>
+				<div class="title-div">{{panel.name}}</div>
 			</div>	
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="more-div">
+				Find more interesting examples? Please drop me an <a href="mailto:albert.yuebai@gmail.com">email</a> and I will implement it and share.
+				</div>
+			</div>
 		</div>	
 	</div>
 	<div class="bottom-bar">
@@ -251,7 +261,7 @@
 	</div>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$("img").hover(function(){
+			$(".img").hover(function(){
 				var src = $(this).attr("src");
 				var new_src = src.substr(0,src.lastIndexOf("."))+".gif";
 				$(this).attr("src", new_src);

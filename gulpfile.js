@@ -5,7 +5,7 @@ var browserSync = require('browser-sync').create();
 gulp.task('server', function() {
     browserSync.init({
         server: {
-            baseDir: "./"
+            baseDir: "./2-header/header-dropdown"
         }
     });
 
