@@ -5,38 +5,38 @@ app.controller('panelCtrl', function($scope) {
 		{
 			"name":"Hidden Sidebar",
 			"img":"./1-sidebar/sidebar-hidden/hidden.png",
-			"link":"https://albertwhite.github.io/web-design-trend/1-sidebar/sidebar-hidden/",
-			"code":"https://github.com/AlbertWhite/web-design-trend/blob/gh-pages/1-sidebar/sidebar-hidden/index.html"
+			"link":"https://albertwhite.github.io/common-practice-for-headbar-and-sidebar/1-sidebar/sidebar-hidden/",
+			"code":"https://github.com/AlbertWhite/common-practice-for-headbar-and-sidebar/blob/gh-pages/1-sidebar/sidebar-hidden/index.html"
 		},
 		{
 			"name":"Bootstrap Sidebar",
 			"img":"./1-sidebar/sidebar-bootstrap/bootstrap.png",
-			"link":"https://albertwhite.github.io/web-design-trend/1-sidebar/sidebar-bootstrap/",
-			"code":"https://github.com/AlbertWhite/web-design-trend/blob/gh-pages/1-sidebar/sidebar-bootstrap/index.html"
+			"link":"https://albertwhite.github.io/common-practice-for-headbar-and-sidebar/1-sidebar/sidebar-bootstrap/",
+			"code":"https://github.com/AlbertWhite/common-practice-for-headbar-and-sidebar/blob/gh-pages/1-sidebar/sidebar-bootstrap/index.html"
 		},
 		{
 			"name":"Bootstrap Customized Sidebar",
 			"img":"./1-sidebar/sidebar-bootstrap-customize/customize.png",
-			"link":"https://albertwhite.github.io/web-design-trend/1-sidebar/sidebar-bootstrap-customize/",
-			"code":"https://github.com/AlbertWhite/web-design-trend/blob/gh-pages/1-sidebar/sidebar-bootstrap-customize/index.html"
+			"link":"https://albertwhite.github.io/common-practice-for-headbar-and-sidebar/1-sidebar/sidebar-bootstrap-customize/",
+			"code":"https://github.com/AlbertWhite/common-practice-for-headbar-and-sidebar/blob/gh-pages/1-sidebar/sidebar-bootstrap-customize/index.html"
 		},
 		{
 			"name":"Sidebar item collapse",
 			"img":"./1-sidebar/sidebar-collapse/collapse.png",
-			"link":"https://albertwhite.github.io/web-design-trend/1-sidebar/sidebar-collapse/",
-			"code":"https://github.com/AlbertWhite/web-design-trend/blob/gh-pages/1-sidebar/sidebar-collapse/index.html"
+			"link":"https://albertwhite.github.io/common-practice-for-headbar-and-sidebar/1-sidebar/sidebar-collapse/",
+			"code":"https://github.com/AlbertWhite/common-practice-for-headbar-and-sidebar/blob/gh-pages/1-sidebar/sidebar-collapse/index.html"
 		},
 		{
 			"name":"Sidebar item collapse",
 			"img":"./1-sidebar/sidebar-li-animation/animation.png",
-			"link":"https://albertwhite.github.io/web-design-trend/1-sidebar/sidebar-li-animation/",
-			"code":"https://github.com/AlbertWhite/web-design-trend/blob/gh-pages/1-sidebar/sidebar-li-animation/index.html"
+			"link":"https://albertwhite.github.io/common-practice-for-headbar-and-sidebar/1-sidebar/sidebar-li-animation/",
+			"code":"https://github.com/AlbertWhite/common-practice-for-headbar-and-sidebar/blob/gh-pages/1-sidebar/sidebar-li-animation/index.html"
 		},
 		{
 			"name":"Multiple level sidebar",
 			"img":"./1-sidebar/sidebar-multiple-level/multilevel.png",
-			"link":"https://albertwhite.github.io/web-design-trend/1-sidebar/sidebar-multiple-level/",
-			"code":"https://github.com/AlbertWhite/web-design-trend/blob/gh-pages/1-sidebar/sidebar-multiple-level/index.html"
+			"link":"https://albertwhite.github.io/common-practice-for-headbar-and-sidebar/1-sidebar/sidebar-multiple-level/",
+			"code":"https://github.com/AlbertWhite/common-practice-for-headbar-and-sidebar/blob/gh-pages/1-sidebar/sidebar-multiple-level/index.html"
 		}
 	];
 
@@ -44,20 +44,20 @@ app.controller('panelCtrl', function($scope) {
 		{
 			"name":"Dropdown header",
 			"img":"./2-header/header-dropdown/dropdown.png",
-			"link":"https://albertwhite.github.io/web-design-trend/2-header/header-dropdown/",
-			"code":"https://github.com/AlbertWhite/web-design-trend/blob/gh-pages/2-header/header-dropdown/index.html"
+			"link":"https://albertwhite.github.io/common-practice-for-headbar-and-sidebar/2-header/header-dropdown/",
+			"code":"https://github.com/AlbertWhite/common-practice-for-headbar-and-sidebar/blob/gh-pages/2-header/header-dropdown/index.html"
 		},
 		{
 			"name":"Parallax scroll headbar",
 			"img":"./2-header/header-parallax-scroll/parallax.png",
-			"link":"https://albertwhite.github.io/web-design-trend/2-header/header-parallax-scroll/",
-			"code":"https://github.com/AlbertWhite/web-design-trend/blob/gh-pages/2-header/header-parallax-scroll/index.html"
+			"link":"https://albertwhite.github.io/common-practice-for-headbar-and-sidebar/2-header/header-parallax-scroll/",
+			"code":"https://github.com/AlbertWhite/common-practice-for-headbar-and-sidebar/blob/gh-pages/2-header/header-parallax-scroll/index.html"
 		},
 		{
 			"name":"Sticky headbar",
 			"img":"./2-header/header-stickyheader/sticky.png",
-			"link":"https://albertwhite.github.io/web-design-trend/2-header/header-stickyheader/",
-			"code":"https://github.com/AlbertWhite/web-design-trend/blob/gh-pages/2-header/header-stickyheader/index.html"
+			"link":"https://albertwhite.github.io/common-practice-for-headbar-and-sidebar/2-header/header-stickyheader/",
+			"code":"https://github.com/AlbertWhite/common-practice-for-headbar-and-sidebar/blob/gh-pages/2-header/header-stickyheader/index.html"
 		}
 	];
 
